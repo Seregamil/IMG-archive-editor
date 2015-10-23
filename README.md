@@ -12,6 +12,6 @@ archive.Add(@"S:\gta-o\infernus.dff", "infernus.dff");
 archive.Add(@"S:\gta-o\infernus.txd", "infernus.txd");
 </code></br></br>
 <b>Delete("Название файла")</b> -- Удаляет файл из IMG архива</br><
-<code>archive.Delete("infernus.txd");</code></br>/br>
+<code>archive.Delete("infernus.txd");</code></br></br>
 <b>Extract("Название файла", "Директория")</b> -- Извлекает файл из IMG архива в указанную директорию</br></br>
 <code>archive.Extract("infernus.dff", "S:\\");</code>
