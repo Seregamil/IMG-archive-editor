@@ -2,7 +2,6 @@ c:\users\seregamil\documents\visual studio 2012\Projects\imageArchive\imageArchi
 c:\users\seregamil\documents\visual studio 2012\Projects\imageArchive\imageArchive\obj\Debug\imageArchive.csprojResolveAssemblyReference.cache
 c:\users\seregamil\documents\visual studio 2012\Projects\imageArchive\imageArchive\bin\Debug\imageArchive.exe
 c:\users\seregamil\documents\visual studio 2012\Projects\imageArchive\imageArchive\bin\Debug\imageArchive.pdb
-c:\users\seregamil\documents\visual studio 2012\Projects\imageArchive\imageArchive\bin\Debug\XArchiveDragon.dll
 c:\users\seregamil\documents\visual studio 2012\Projects\imageArchive\imageArchive\bin\Debug\XArchiveDragon.pdb
 c:\users\seregamil\documents\visual studio 2012\Projects\imageArchive\imageArchive\obj\Debug\imageArchive.exe
 c:\users\seregamil\documents\visual studio 2012\Projects\imageArchive\imageArchive\obj\Debug\imageArchive.pdb

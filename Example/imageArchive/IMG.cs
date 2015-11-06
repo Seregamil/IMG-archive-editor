@@ -61,13 +61,15 @@ namespace imageArchive
         public bool Add(string filePath, string fileName)
         {
             if (!File.Exists(filePath))
+            {
                 return false;
+            }
 
             for (int item = 0; item != archive.Items.Count; item++)
             {
                 if (fileName != archive.Items[item].Name)
                     continue;
-
+ 
                 Delete(fileName);
                 break;
             }
@@ -88,12 +90,39 @@ namespace imageArchive
                 archive.WriteHeader(binaryWriter);
                 binaryWriter.Close();
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 return false;
             }
             Open(archivePath, false);
-            return false;
+            return true;
+        }
+
+        /// <summary>
+        /// Создает временную папку с оригинальными файлами и заменяет их на ваши
+        /// </summary>
+        /// <param name="path">Файл, который заменит временно оригинальный</param>
+        /// <param name="filename">Название заменяемого файла в архиве</param>
+        /// <param name="tempDirectory">Папка для временного хранения оригиналов</param>
+        /// <returns>none</returns>
+        public bool AddTempFile(string path, string filename, string tempDirectory)
+        {
+            if (!Directory.Exists(tempDirectory))
+                Directory.CreateDirectory(tempDirectory);
+
+            Extract(filename, tempDirectory);
+            return Add(path, filename);
+        }
+
+        /// <summary>
+        /// Восстанавливает архив в исходное положение из директории
+        /// </summary>
+        /// <param name="filename">Название файла</param>
+        /// <param name="tempDirectory"></param>
+        public bool RemoveTempFile(string filename, string tempDirectory)
+        {
+            return Add(tempDirectory, filename);
         }
 
         internal uint GetEOFoffsetBlock()
@@ -126,8 +155,9 @@ namespace imageArchive
                 binaryWriter.Close();
                 Open(archivePath, false);
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 return false;
             }
             
